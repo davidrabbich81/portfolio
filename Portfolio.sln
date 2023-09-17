@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioApi", "PortfolioApi\PortfolioApi.csproj", "{ED174DF7-04C4-4F88-B4C1-F1C45829BDE7}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "portfolioweb", "PortfolioWeb\portfolioweb.esproj", "{260699A3-3373-41FE-B4D7-AA5C4CA606B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED174DF7-04C4-4F88-B4C1-F1C45829BDE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED174DF7-04C4-4F88-B4C1-F1C45829BDE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED174DF7-04C4-4F88-B4C1-F1C45829BDE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED174DF7-04C4-4F88-B4C1-F1C45829BDE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{260699A3-3373-41FE-B4D7-AA5C4CA606B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{260699A3-3373-41FE-B4D7-AA5C4CA606B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{260699A3-3373-41FE-B4D7-AA5C4CA606B9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{260699A3-3373-41FE-B4D7-AA5C4CA606B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{260699A3-3373-41FE-B4D7-AA5C4CA606B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{260699A3-3373-41FE-B4D7-AA5C4CA606B9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D5B97BF-96C0-4310-9573-C9DA4D5E8107}
+	EndGlobalSection
+EndGlobal
