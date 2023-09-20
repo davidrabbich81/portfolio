@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { context } from "../context";
 import SectionContainer from "./SectionContainer";
 import TypeingAnimation from "./TypeingAnimation";
+import personalInfo from "../data/personalInfo";
 const Home = () => {
   const { navChange } = useContext(context);
   return (
@@ -12,31 +13,27 @@ const Home = () => {
             <div className="left w-1/2">
               <div className="title w-full float-left mb-[21px]">
                 <h3 className="font-extrabold text-[60px] leading-[70px]">
-                  Hi, I'm <span className="text-blue-color">Elisc!</span>
+                  Hi, I'm <span className="text-blue-color">{personalInfo.firstName}</span>
                 </h3>
                 <h3 className="font-extrabold text-[60px] leading-[70px]">
                   <span className="cd-headline rotate-1">
                     {" "}
                     {/* ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  */}
-                    <span className="blc">Creative </span>
                     <TypeingAnimation />
                   </span>
-                </h3>
-                <h3 className="font-extrabold text-[60px] leading-[70px]">
-                  Based in Florida
                 </h3>
               </div>
               <div className="subtitle wfll max-w-[80%] float-left mb-[40px]">
                 <p>
-                  I'm a Florida based web designer &amp; front‑end developer
-                  with <span className="text-blue-color">10+ years</span> of
+                  I'm a UK based software engineer with{" "} 
+                  <span className="text-blue-color">{personalInfo.yearsExperience()} years</span> of
                   experience
                 </p>
               </div>
               <div className="buttons w-full float-left flex items-center mb-[150px]">
                 <div className="elisc_tm_button transition_link">
-                  <a href="#portfolio" onClick={() => navChange("portfolio")}>
-                    Got a project?
+                  <a href="#portfolio" onClick={() => navChange("services")}>
+                    Lets work together?
                   </a>
                 </div>
                 <div
@@ -44,7 +41,7 @@ const Home = () => {
                   data-style="border"
                 >
                   <a href="#contact" onClick={() => navChange("contact")}>
-                    Let's talk
+                    Get in touch
                   </a>
                 </div>
               </div>
@@ -53,17 +50,17 @@ const Home = () => {
                   <li className="pl-[15px]">
                     <a
                       className="text-[#130F49] font-semibold text-[18px]"
-                      href="tel:+77 022 444 05 05"
+                      href={"tel:" + personalInfo.phoneNumber}
                     >
-                      +77 022 444 05 05
+                      {personalInfo.phoneNumber}
                     </a>
                   </li>
                   <li className="pl-[15px]">
                     <a
                       className="text-[#130F49] font-semibold text-[18px]"
-                      href="mailto:support@elisc.com"
+                      href={"mailto:" + personalInfo.emailAddress}
                     >
-                      support@elisc.com
+                      {personalInfo.emailAddress}
                     </a>
                   </li>
                   <li className="pl-[15px]">
@@ -71,7 +68,7 @@ const Home = () => {
                       className="href_location text-[#130F49] font-semibold text-[18px]"
                       href="#"
                     >
-                      Ave Street Avenue, New York
+                      {personalInfo.from}
                     </a>
                   </li>
                 </ul>

@@ -22,7 +22,7 @@ const MobileMenu = () => {
               />
             </a>
             <a className="text" href="#">
-              <span>R.Elisc</span>
+              <span>D.Rabbich</span>
             </a>
           </div>
           <div className="trigger">

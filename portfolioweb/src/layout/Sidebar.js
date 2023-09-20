@@ -5,9 +5,7 @@ const Sidebar = () => {
   const { navChange, nav, menus } = useContext(context);
 
   const socialLinks = [
-    { id: 1, name: "facebook", link: "#", icon: "icon-facebook-1" },
-    { id: 2, name: "twitter", link: "#", icon: "icon-twitter-1" },
-    { id: 3, name: "linkedin", link: "#", icon: "icon-linkedin-1" },
+    { id: 3, name: "linkedin", link: "https://www.linkedin.com/in/david-rabbich-87b73414/", icon: "icon-linkedin-1" }
   ];
 
   return (
@@ -28,7 +26,7 @@ const Sidebar = () => {
           <div className="name w-full float-left mt-[-19px]">
             <h3>
               <span>
-                Robert Elisc<span className="back">Robert Elisc</span>
+                &nbsp;<span className="back">David Rabbich</span>
               </span>
             </h3>
           </div>
@@ -66,7 +64,7 @@ const Sidebar = () => {
           </div>
           <div className="text py-0 px-[50px]">
             <p>
-              Copyright © {new Date().getFullYear()} Robert Elisc. All rights
+              Copyright © {new Date().getFullYear()} David Rabbich. All rights
               reserved.
             </p>
           </div>
