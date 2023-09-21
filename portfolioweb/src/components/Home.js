@@ -25,23 +25,15 @@ const Home = () => {
               </div>
               <div className="subtitle wfll max-w-[80%] float-left mb-[40px]">
                 <p>
-                  I'm a UK based software engineer with{" "} 
+                  I'm a UK based CTO, engineering manager and software engineer with{" "} 
                   <span className="text-blue-color">{personalInfo.yearsExperience()} years</span> of
                   experience
                 </p>
               </div>
               <div className="buttons w-full float-left flex items-center mb-[150px]">
                 <div className="elisc_tm_button transition_link">
-                  <a href="#portfolio" onClick={() => navChange("services")}>
-                    Lets work together?
-                  </a>
-                </div>
-                <div
-                  className="elisc_tm_button transition_link"
-                  data-style="border"
-                >
                   <a href="#contact" onClick={() => navChange("contact")}>
-                    Get in touch
+                    Lets work together?
                   </a>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import emailjs from "emailjs-com";
 import { useState } from "react";
 import SectionContainer from "./SectionContainer";
+import personalInfo from "../data/personalInfo";
 const Contact = () => {
   const [mailData, setMailData] = useState({
     name: "",
@@ -65,17 +66,17 @@ const Contact = () => {
                   <li className="mb-[8px] w-full float-left">
                     <a
                       className="text-dark-color font-semibold font-inter inline-block relative"
-                      href="tel:+77 022 444 05 05"
+                      href={"tel:" + personalInfo.phoneNumber}
                     >
-                      +77 022 444 05 05
+                      {personalInfo.phoneNumber}
                     </a>
                   </li>
                   <li className="mb-[8px] w-full float-left">
                     <a
                       className="text-dark-color font-semibold font-inter inline-block relative"
-                      href="tel:+77 022 444 05 05"
-                    >
-                      support@elisc.com
+                      href={"mailto:" + personalInfo.emailAddress}
+                      >
+                      {personalInfo.emailAddress}
                     </a>
                   </li>
                   <li className="w-full float-left">
@@ -83,7 +84,7 @@ const Contact = () => {
                       className="href_location text-dark-color font-semibold font-inter inline-block relative"
                       href="#"
                     >
-                      Ave Street Avenue, New York
+                      {personalInfo.from}
                     </a>
                   </li>
                 </ul>
@@ -153,6 +154,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
+          {/* */}
           <div className="elisc_tm_map w-full float-left mt-[100px] mb-[120px]">
             <div className="mapouter">
               <div className="gmap_canvas">
@@ -160,7 +162,7 @@ const Contact = () => {
                   width="100%"
                   height={375}
                   id="gmap_canvas"
-                  src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59509.94218848406!2d-2.788644698609306!3d54.093214279463844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487c9cfa26a9690d%3A0x762b2704918d121b!2sWindermere%20Rd%2C%20Bolton-le-Sands%2C%20Carnforth%20LA5%208LL!5e0!3m2!1sen!2suk!4v1695317285199!5m2!1sen!2suk"
                   frameBorder={0}
                   scrolling="no"
                   marginHeight={0}

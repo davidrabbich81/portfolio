@@ -1,8 +1,11 @@
+import { useContext } from "react";
+import { context } from "../context";
 import Experience from "./Experience";
 import SectionContainer from "./SectionContainer";
 import TypeingAnimation from "./TypeingAnimation";
 import personalInfo from "../data/personalInfo";
 const About = () => {
+  const { navChange } = useContext(context);
   return (
     <SectionContainer name="about">
       <div className="elisc_tm_about w-full float-left pt-[130px]">
@@ -25,7 +28,9 @@ const About = () => {
                 </span>
               </div>
               <div className="elisc_tm_button transition_link">
-                <a href="/#contact">Get in touch?</a>
+                <a href="#contact" onClick={() => navChange("contact")}>
+                    Lets work together?
+                </a>
               </div>
             </div>
             <div className="right w-[60%]">
@@ -33,7 +38,7 @@ const About = () => {
                 <p className="mb-[30px]">
                   Hello there! My name is{" "}
                   <span className="text-yellow-color">{personalInfo.fullName}</span>. I am
-                  a CTO and software engineer.
+                  a CTO, engineering manager and software engineer.
                 </p>
                 <p>
                   With {personalInfo.yearsExperience()} years experience as a professional a software engineer,
@@ -71,34 +76,6 @@ const About = () => {
                 </ul>
               </div>
             </div>
-          </div>
-          <div className="elisc_tm_counter w-full float-left mb-[90px]">
-            <ul className="ml-[-30px]">
-              <li className="mb-[30px] float-left w-1/3 pl-[30px]">
-                <div className="list_inner w-full float-left relative text-center py-[60px] px-[20px] rounded-[4px] overflow-hidden bg-[#D3F4EC]">
-                  <h3 className="text-[40px] mb-[7px]">{personalInfo.yearsExperience()}</h3>
-                  <span className="font-medium font-karla uppercase">
-                    Years of Experience
-                  </span>
-                </div>
-              </li>
-              <li className="mb-[30px] float-left w-1/3 pl-[30px]">
-                <div className="list_inner w-full float-left relative text-center py-[60px] px-[20px] rounded-[4px] overflow-hidden bg-[#FCE8D4]">
-                  <h3 className="text-[40px] mb-[7px]">x</h3>
-                  <span className="font-medium font-karla uppercase">
-                    2nd metric
-                  </span>
-                </div>
-              </li>
-              <li className="mb-[30px] float-left w-1/3 pl-[30px]">
-                <div className="list_inner w-full float-left relative text-center py-[60px] px-[20px] rounded-[4px] overflow-hidden bg-[#E3F9E0]">
-                  <h3 className="text-[40px] mb-[7px]">x</h3>
-                  <span className="font-medium font-karla uppercase">
-                    3rd metric
-                  </span>
-                </div>
-              </li>
-            </ul>
           </div>
         </div>
         <Experience />
