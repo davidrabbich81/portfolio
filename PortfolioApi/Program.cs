@@ -1,3 +1,5 @@
+using PortfolioApi.Helpers.ExtensionMethods;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,7 +9,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+// add dependency injection services
+builder.AddDIServices();
 
 var app = builder.Build();
 
