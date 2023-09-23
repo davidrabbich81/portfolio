@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { context } from "../context";
 import Experience from "./Experience";
+import Education from "./Education";
 import SectionContainer from "./SectionContainer";
 import TypeingAnimation from "./TypeingAnimation";
 import personalInfo from "../data/personalInfo";
@@ -78,7 +79,10 @@ const About = () => {
             </div>
           </div>
         </div>
+        {/* Experience section */}
         <Experience />
+        {/* Education section */}
+        <Education />
       </div>
     </SectionContainer>
   );

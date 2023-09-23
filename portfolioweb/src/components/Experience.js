@@ -4,6 +4,7 @@ import { context } from "../context";
 const experiences = [
   {
     id: 1,
+    type: "job",
     image: "assets/img/experience/1.jpg",
     date: "2020 - Present",
     company: "Fuuse",
@@ -12,14 +13,16 @@ const experiences = [
   },
   {
     id: 2,
+    type: "job",
     image: "assets/img/experience/2.jpg",
     date: "2015 - 2020",
-    company: "Head of engineering",
-    designation: "Cloud Commerce Pro",
+    company: "Cloud Commerce Pro",
+    designation: "Head of engineering",
     synopsis: "Managed & implemented the expansion of a multi-channel warehouse management solution."
   },
   {
     id: 3,
+    type: "job",
     image: "assets/img/experience/3.jpg",
     date: "2010 - 2015",
     company: "Fat Media",
@@ -28,6 +31,7 @@ const experiences = [
   },
   {
     id: 4,
+    type: "job",
     image: "assets/img/experience/4.jpg",
     date: "2007 - 2010",
     company: "BF Internet",
@@ -36,6 +40,7 @@ const experiences = [
   },
   {
     id: 5,
+    type: "job",
     image: "assets/img/experience/4.jpg",
     date: "2004 - 2007",
     company: "EKM",
@@ -44,23 +49,21 @@ const experiences = [
   },
   {
     id: 6,
+    type: "job",
     image: "assets/img/experience/4.jpg",
-    date: "1998 - 2004",
+    date: "1999 - 2004",
     company: "Business Serve",
     designation: "Website designer & engineer",
     synopsis: "Rapid development of SME websites and internal systems for an early UK ISP"
-  },
+  }
 ];
 const Experience = () => {
   const { modalToggle, setexperienceModal } = useContext(context);
   return (
-    <div className="elisc_tm_experience w-full float-left bg-[#F3F9FF] pt-[40px] pb-[70px] px-0">
+    <div className="elisc_tm_experience w-full float-left bg-[#F3F9FF] pt-[40px] px-0">
       <div className="tm_content w-full max-w-[1250px] h-auto clear-both my-0 mx-auto py-0 px-[20px]">
         <div className="elisc_tm_title w-full float-left">
-          <span className="w-full float-left font-medium uppercase inline-block mb-[12px]">
-            - Experience
-          </span>
-          <h3 className="text-[40px] font-extrabold">Everything about me!</h3>
+          <h3 className="text-[40px] font-extrabold">Experience!</h3>
         </div>
         <div className="list w-full float-left mt-[40px]">
           <ul className="ml-[-30px] flex flex-wrap">

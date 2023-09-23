@@ -3,7 +3,7 @@ import Contact from "@/src/components/Contact";
 import Home from "@/src/components/Home";
 import News from "@/src/components/News";
 import Portfolio from "@/src/components/Portfolio";
-import Services from "@/src/components/Services";
+import Services from "@/src/components/Skills";
 import { context } from "@/src/context";
 import Layout from "@/src/layout/Layout";
 import { useContext, useEffect } from "react";
