@@ -2,9 +2,7 @@ import { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { context } from "../context";
 import { sliderProps } from "../sliderProps";
-import Clients from "./Clients";
 import SectionContainer from "./SectionContainer";
-import Testimonial from "./Testimonial";
 const Portfolio = () => {
   const { setPortfolioModal, modalToggle } = useContext(context);
   return (
@@ -201,12 +199,6 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      {/* PARTNERS */}
-      <Clients />
-      {/* /PARTNERS */}
-      {/* TESTIMONIALS */}
-      <Testimonial />
-      {/* /TESTIMONIALS */}
     </SectionContainer>
   );
 };

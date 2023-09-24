@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import { context } from "../context";
 import Experience from "./Experience";
+import Education from "./Education";
 import SectionContainer from "./SectionContainer";
 import TypeingAnimation from "./TypeingAnimation";
+import personalInfo from "../data/personalInfo";
 const About = () => {
+  const { navChange } = useContext(context);
   return (
     <SectionContainer name="about">
       <div className="elisc_tm_about w-full float-left pt-[130px]">
@@ -13,34 +18,32 @@ const About = () => {
                   - Nice to meet you!
                 </span>
                 <h3 className="name font-extrabold text-[40px]">
-                  Robert Elisc
+                  {personalInfo.fullName}
                 </h3>
                 <span className="job font-semibold text-[20px] text-dark-color">
                   <span className="cd-headline rotate-1">
                     {" "}
                     {/* ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  */}
-                    <span className="blc">Web designer &amp; </span>
                     <TypeingAnimation />
                   </span>
                 </span>
               </div>
               <div className="elisc_tm_button transition_link">
-                <a href="#portfolio">Got a project?</a>
+                <a href="#contact" onClick={() => navChange("contact")}>
+                    Lets work together?
+                </a>
               </div>
             </div>
             <div className="right w-[60%]">
               <div className="text w-full float-left mb-[44px]">
                 <p className="mb-[30px]">
                   Hello there! My name is{" "}
-                  <span className="text-yellow-color">Robert Elisc</span>. I am
-                  a web designer &amp; developer, and I'm very passionate and
-                  dedicated to my work.
+                  <span className="text-yellow-color">{personalInfo.fullName}</span>. I am
+                  a CTO, engineering manager and software engineer.
                 </p>
                 <p>
-                  With 20 years experience as a professional a graphic designer,
-                  I have acquired the skills and knowledge necessary to make
-                  your project a success. I enjoy every step of the design
-                  process, from discussion and collaboration.
+                  With {personalInfo.yearsExperience()} years experience as a professional a software engineer,
+                  I know what it takes to make a successful software project.
                 </p>
               </div>
               <div className="info w-full float-left">
@@ -48,63 +51,38 @@ const About = () => {
                   <li className="mr-[40px] mb-[20px] inline-block">
                     <span className="block uppercase underline">Age</span>
                     <span className="block font-inter font-bold text-dark-color">
-                      25
+                      {personalInfo.age()}
                     </span>
                   </li>
                   <li className="mr-[40px] mb-[20px] inline-block">
-                    <span className="block uppercase underline">Born In</span>
+                    <span className="block uppercase underline">From</span>
                     <span className="block font-inter font-bold text-dark-color">
                       <a className="href_location" href="#">
-                        Florida, USA
+                        {personalInfo.from}
                       </a>
                     </span>
                   </li>
                   <li className="mr-[40px] mb-[20px] inline-block">
                     <span className="block uppercase underline">Mail</span>
                     <span className="block font-inter font-bold text-dark-color">
-                      <a href="mailto:support@elisc.com">support@elisc.com</a>
+                      <a href={"mailto:" + personalInfo.emailAddress}>{personalInfo.emailAddress}</a>
                     </span>
                   </li>
                   <li className="mr-[40px] mb-[20px] inline-block">
                     <span className="block uppercase underline">Phone</span>
                     <span className="block font-inter font-bold text-dark-color">
-                      <a href="tel:+77 022 444 05 05">+77 022 444 05 05</a>
+                      <a href={"tel:" + personalInfo.phoneNumber}>{personalInfo.phoneNumber}</a>
                     </span>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div className="elisc_tm_counter w-full float-left mb-[90px]">
-            <ul className="ml-[-30px]">
-              <li className="mb-[30px] float-left w-1/3 pl-[30px]">
-                <div className="list_inner w-full float-left relative text-center py-[60px] px-[20px] rounded-[4px] overflow-hidden bg-[#D3F4EC]">
-                  <h3 className="text-[40px] mb-[7px]">10+</h3>
-                  <span className="font-medium font-karla uppercase">
-                    Years of Experience
-                  </span>
-                </div>
-              </li>
-              <li className="mb-[30px] float-left w-1/3 pl-[30px]">
-                <div className="list_inner w-full float-left relative text-center py-[60px] px-[20px] rounded-[4px] overflow-hidden bg-[#FCE8D4]">
-                  <h3 className="text-[40px] mb-[7px]">50+</h3>
-                  <span className="font-medium font-karla uppercase">
-                    Projects Completed
-                  </span>
-                </div>
-              </li>
-              <li className="mb-[30px] float-left w-1/3 pl-[30px]">
-                <div className="list_inner w-full float-left relative text-center py-[60px] px-[20px] rounded-[4px] overflow-hidden bg-[#E3F9E0]">
-                  <h3 className="text-[40px] mb-[7px]">30+</h3>
-                  <span className="font-medium font-karla uppercase">
-                    Happy Clients
-                  </span>
-                </div>
-              </li>
-            </ul>
-          </div>
         </div>
+        {/* Experience section */}
         <Experience />
+        {/* Education section */}
+        <Education />
       </div>
     </SectionContainer>
   );
