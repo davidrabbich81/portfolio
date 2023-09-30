@@ -1,10 +1,11 @@
 import axios from 'axios'
+import configService from '../services/configService'
 
 export default {
     getBlogs: () =>
         axios({
             'method':'GET',
-            'url':'https://localhost:7214/api/Blog',
+            'url':`${configService.apiUrl()}/api/Blog`,
             'headers': {
                 'content-type':'application/json',
             }
@@ -12,7 +13,7 @@ export default {
     getBlog: (id) =>
         axios({
             'method':'GET',
-            'url':`https://localhost:7214/api/Blog/${id}`,
+            'url':`${configService.apiUrl()}/api/Blog/${id}`,
             'headers': {
                 'content-type':'application/json'
             }

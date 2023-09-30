@@ -1,0 +1,7 @@
+{
+    "apiUrl":  {
+        "development": "https://localhost:7214",
+        "production": "https://drportfolioapi.azurewebsites.net"
+    } 
+}
+

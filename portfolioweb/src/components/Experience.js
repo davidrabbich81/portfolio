@@ -72,8 +72,9 @@ const Experience = () => {
       experienceClient.getExperiences()
       .then((response)=>{
           setResponseData(response.data);
+          console.log("ResponseData", responseData);
           if (responseData != null && responseData.length > 0){
-            //experiences = responseData;
+            experiences = responseData;
           }
           console.log("Response", response.data);
       })
@@ -90,7 +91,7 @@ const Experience = () => {
         </div>
         <div className="list w-full float-left mt-[40px]">
           <ul className="ml-[-30px] flex flex-wrap">
-            {experiences.map((experience) => (
+            {(responseData || experiences).map((experience) => (
               <li
                 className="mb-[40px] pl-[30px] float-left w-1/2"
                 key={"experience" + experience.id}

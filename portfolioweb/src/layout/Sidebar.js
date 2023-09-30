@@ -15,12 +15,12 @@ const Sidebar = () => {
           <div className="image relative w-[118px] inline-block">
             <img
               className="relative opacity-0 min-w-full"
-              src="assets/img/thumbs/1-1.jpg"
+              src="assets/img/logo/me.jpg"
               alt="image"
             />
             <div
               className="main absolute inset-0 bg-no-repeat bg-cover bg-center rounded-full"
-              data-img-url="assets/img/about/1.jpg"
+              data-img-url="assets/img/logo/me.jpg"
             />
           </div>
           <div className="name w-full float-left mt-[-19px]">

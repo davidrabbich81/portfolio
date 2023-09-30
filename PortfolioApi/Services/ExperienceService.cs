@@ -12,6 +12,14 @@ namespace PortfolioApi.Services
         {
             var results = new List<ExperienceSummary>();
 
+            results.Add(new ExperienceSummary()
+            {
+                JobTitle = "Test",
+                Id = "1",
+                Synopsis = "Test Synopsis",
+                Company = "Test Company"
+            });
+
             return results;
         }
 

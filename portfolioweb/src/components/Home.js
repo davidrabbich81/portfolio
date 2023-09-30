@@ -67,7 +67,7 @@ const Home = () => {
               </div>
             </div>
             <div className="right w-1/2 pl-[50px]">
-              <img src="assets/img/about/2.png" alt="image" />
+              <img src="assets/img/about/main_photo.jpg" alt="image" />
             </div>
           </div>
         </div>

@@ -67,10 +67,10 @@ const MobileMenu = () => {
             <div className="social w-full float-left mb-[5px]">
               <ul>
                 <li className="mr-[8px] inline-block">
-                  <a className="text-[#333]" href="#">
+                  <a className="text-[#333]" href="https://www.linkedin.com/in/david-rabbich-87b73414/">
                     <img
                       className="svg"
-                      src="assets/img/svg/social/dribbble.svg"
+                      src="assets/img/svg/social/linkedin.svg"
                       alt="image"
                     />
                   </a>
