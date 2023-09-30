@@ -1,7 +1,8 @@
-import { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { context } from "../context";
+import experienceClient from "../api/experienceClient";
 
-const experiences = [
+let experiences = [
   {
     id: 1,
     type: "job",
@@ -58,6 +59,28 @@ const experiences = [
   }
 ];
 const Experience = () => {
+  // Create state variables
+  let [responseData, setResponseData] = React.useState('');
+
+  useEffect(() => {
+    getExperiences();
+    console.log("Get experiences", {response:  responseData });
+  }, []);
+
+  // fetches data
+  let getExperiences = () => {
+      experienceClient.getExperiences()
+      .then((response)=>{
+          setResponseData(response.data);
+          if (responseData != null && responseData.length > 0){
+            //experiences = responseData;
+          }
+          console.log("Response", response.data);
+      })
+      .catch((error) => {
+          console.log("Error", error);
+      })
+  }
   const { modalToggle, setexperienceModal } = useContext(context);
   return (
     <div className="elisc_tm_experience w-full float-left bg-[#F3F9FF] pt-[40px] px-0">
@@ -70,7 +93,7 @@ const Experience = () => {
             {experiences.map((experience) => (
               <li
                 className="mb-[40px] pl-[30px] float-left w-1/2"
-                key={experience.id}
+                key={"experience" + experience.id}
               >
                 <img
                   className="popup_image"

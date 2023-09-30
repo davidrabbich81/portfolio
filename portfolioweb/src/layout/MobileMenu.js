@@ -52,7 +52,7 @@ const MobileMenu = () => {
                 {menus.map((menu, i) => (
                   <li
                     className={`mb-[7px] ${nav === menu.href ? "active" : ""}`}
-                    key={menu.id}
+                    key={"mobile_Menu" + menu.id}
                   >
                     <a
                       href={`#${menu.href}`}
@@ -70,43 +70,7 @@ const MobileMenu = () => {
                   <a className="text-[#333]" href="#">
                     <img
                       className="svg"
-                      src="assets/img/svg/social/facebook.svg"
-                      alt="image"
-                    />
-                  </a>
-                </li>
-                <li className="mr-[8px] inline-block">
-                  <a className="text-[#333]" href="#">
-                    <img
-                      className="svg"
-                      src="assets/img/svg/social/twitter.svg"
-                      alt="image"
-                    />
-                  </a>
-                </li>
-                <li className="mr-[8px] inline-block">
-                  <a className="text-[#333]" href="#">
-                    <img
-                      className="svg"
-                      src="assets/img/svg/social/instagram.svg"
-                      alt="image"
-                    />
-                  </a>
-                </li>
-                <li className="mr-[8px] inline-block">
-                  <a className="text-[#333]" href="#">
-                    <img
-                      className="svg"
                       src="assets/img/svg/social/dribbble.svg"
-                      alt="image"
-                    />
-                  </a>
-                </li>
-                <li className="inline-block">
-                  <a className="text-[#333]" href="#">
-                    <img
-                      className="svg"
-                      src="assets/img/svg/social/tik-tok.svg"
                       alt="image"
                     />
                   </a>

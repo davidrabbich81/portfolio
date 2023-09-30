@@ -36,7 +36,7 @@ const Sidebar = () => {
             {menus.map((menu, i) => (
               <li
                 className={`mb-[15px] ${nav === menu.href ? "active" : ""}`}
-                key={menu.id}
+                key={"menu" + menu.id}
               >
                 <a href={`#${menu.href}`} onClick={() => navChange(menu.href)}>
                   {menu.name}

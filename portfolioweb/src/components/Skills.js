@@ -59,7 +59,7 @@ const skillset = [
     synopsis: "Direct 1:1 development of both development and soft skills with engineering teams"
   },
   {
-    id: 11,
+    id: 12,
     name: "Customer/Investor communication",
     synopsis: "Fully adept at handling communications with both customers and investors translating business requirements to development goals"
   },
@@ -68,7 +68,7 @@ const Skills = () => {
   const { setServiceModal, modalToggle } = useContext(context);
 
   return (
-    <SectionContainer name="service">
+    <SectionContainer name="skills">
       <div className="elisc_tm_services w-full float-left pt-[110px]">
         <div className="tm_content w-full max-w-[1250px] h-auto clear-both my-0 mx-auto py-0 px-[20px]">
           <div className="elisc_tm_service_title w-full float-left flex justify-between items-end">
@@ -82,7 +82,7 @@ const Skills = () => {
               {skillset.map((skill) => (
                 <li
                   className="mb-[30px] pl-[30px] w-1/3 float-left"
-                  key={skill.id}
+                  key={"skill" + skill.id}
                 >
                   <div className="list_inner w-full float-left clear-both h-full relative px-[40px] pt-[32px] pb-[55px] rounded-[4px]">
                     <div className="details w-full float-left relative z-[1]">

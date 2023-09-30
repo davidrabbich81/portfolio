@@ -75,7 +75,7 @@ const state = (props) => {
     menus: [
       { id: 1, name: "Home", href: "home" },
       { id: 2, name: "About", href: "about" },
-      { id: 2, name: "Skills", href: "service" },
+      { id: 3, name: "Skills", href: "skills" },
       // { id: 5, name: "Blog", href: "blogs" },
       { id: 6, name: "Contact", href: "contact" },
     ],

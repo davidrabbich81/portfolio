@@ -3,24 +3,28 @@ import { context } from "../context";
 
 const education = [
   {
+    id: 1,
     date: "2000",
     school: "Lancaster & Morecambe College",
     qualification: "AutoCAD Level 2",
     synopsis: "synopsis"
   },
   {
+    id: 2,
     date: "1999",
     school: "Lancaster & Morecambe College",
     qualification: "AutoCAD Level 1",
     synopsis: "synopsis"
   },
   {
+    id: 3,
     date: "1997 - 1999",
     school: "Heysham High School",
     qualification: "A-levels",
     synopsis: "synopsis about a-levels."
   },
   {
+    id: 4,
     date: "1992 - 1997",
     school: "Heysham High School",
     qualification: "GCSEs",
@@ -40,6 +44,7 @@ const Education = () => {
             {education.map((edu) => (
               <li
                 className="mb-[40px] pl-[30px] float-left w-1/2"
+                key={"education" + edu.id}
               >
                 <div className="list_inner w-full float-left clear-both bg-white rounded-[4px] px-[70px] py-[45px] relative">
                   <div className="short w-full float-left flex justify-between mb-[16px]">
