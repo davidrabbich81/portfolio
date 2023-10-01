@@ -12,6 +12,8 @@ namespace PortfolioApi.Helpers.ExtensionMethods
 
             builder.Services.AddScoped<IExperienceService, ExperienceService>();
             builder.Services.AddScoped<IBlogService, BlogService>();
+            builder.Services.AddScoped<IFileService, FileService>();
+            builder.Services.AddScoped<IMarkdownConverterService, MarkdownConverterService>();
 
             return builder;
         }
