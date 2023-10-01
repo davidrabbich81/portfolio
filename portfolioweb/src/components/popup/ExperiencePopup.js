@@ -17,9 +17,7 @@ const ExperiencePopup = () => {
             <h6 className="pt-[20px]">{experienceModal.synopsis}</h6>
           </div>
         </div>
-        <div className="blog-content">
-            {experienceModal.content}
-        </div>
+        <div className="blog-content" dangerouslySetInnerHTML={{__html: experienceModal.content}} />
       </div>
     </ModalContainer>
   );
