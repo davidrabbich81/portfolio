@@ -24,13 +24,8 @@ namespace PortfolioApi.Services
 
 
             results = markdown
-                .Select(x => new BlogSummary()
-                {
-                    Id = x.Key,
-                    DateCreated = DateTime.UtcNow,
-                    Summary = "Test summary",
-                    Title = "Test Title"
-                }).ToList();
+                .Select(x => new BlogSummary().ParseNameForInfo(x.Key))
+                .ToList();
 
             return results;
         }
@@ -38,9 +33,18 @@ namespace PortfolioApi.Services
 
         public async Task<Blog> GetBlogPostAsync(string id)
         {
-            var results = new Blog();
+            var result = new Blog();
 
-            return results;
+            var markdown = await markdownConverterService.ConvertMarkdownFilesToHtml(
+                fileService.GetFullPathFromRelativePath($"/Data/Blog/{id}.md"));
+
+            if (markdown.Any())
+            {
+                result.ParseNameForInfo(markdown.First().Key);
+                result.Content = markdown.First().Value;
+            }
+
+            return result;
         }
     }
 }

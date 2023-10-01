@@ -15,6 +15,13 @@ namespace PortfolioApi.Services
         {
             var results = new Dictionary<string, string>();
 
+            if (!Directory.Exists(path) && File.Exists(path)) // single file 
+            {
+                results.Add(Path.GetFileNameWithoutExtension(path),
+                    await System.IO.File.ReadAllTextAsync(path));
+                return results;
+            }
+
             foreach (var file in System.IO.Directory.GetFiles(path))
                 results.Add(Path.GetFileNameWithoutExtension(file),
                     await System.IO.File.ReadAllTextAsync(file));

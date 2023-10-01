@@ -40,6 +40,25 @@ namespace PortfolioApi.Tests.Tests.Services
 
         }
 
+        [TestCase("2020-2023-CTO-Fuuse")]
+        public async Task When_GetExperienceIsCalled_Then_ASingleExperienceIsReturned(string file)
+        {
+            var service = IoCService.Controller.GetService<IExperienceService>();
+
+            var item = await service.GetExperienceAsync(file);
+
+            Assert.That(item.Id, Is.Not.Null.And.Not.Empty, "The ID was empty");
+            Assert.That(item.JobTitle, Is.Not.Null.And.Not.Empty, "The Job title was empty");
+            Assert.That(item.Company, Is.Not.Null.And.Not.Empty, "The Company was empty");
+            Assert.That(item.TimeFrame, Is.Not.Null.And.Not.Empty, "The Timeframe was empty");
+
+            Console.WriteLine($"Id: {item.Id}");
+            Console.WriteLine($"Title: {item.JobTitle}");
+            Console.WriteLine($"Company: {item.Company}");
+            Console.WriteLine($"Time: {item.TimeFrame}");
+            Console.WriteLine($"Content: {item.FullDescription}");
+        }
+
         #endregion
     }
 }

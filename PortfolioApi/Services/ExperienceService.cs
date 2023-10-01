@@ -23,16 +23,26 @@ namespace PortfolioApi.Services
                 fileService.GetFullPathFromRelativePath("/Data/Experience/"));
 
             results = markdown
-                .Select(x => new ExperienceSummary().ParseNameForInfo(x.Key)).ToList();
+                .Select(x => new ExperienceSummary().ParseNameForInfo(x.Key))
+                .ToList();
 
             return results;
         }
 
         public async Task<Experience> GetExperienceAsync(string id)
         {
-            var results = new Experience();
+            var result = new Experience();
 
-            return await Task.FromResult(results);
+            var markdown = await markdownConverterService.ConvertMarkdownFilesToHtml(
+                fileService.GetFullPathFromRelativePath($"/Data/Experience/{id}.md"));
+
+            if (markdown.Any())
+            {
+                result.ParseNameForInfo(markdown.First().Key);
+                result.FullDescription = markdown.First().Value;
+            }
+
+            return result;
         }
     }
 }
