@@ -1,5 +1,6 @@
 ﻿using Markdig;
 using Markdig.Syntax;
+using PortfolioApi.Models.Markdown;
 using PortfolioApi.Services.Interface;
 
 namespace PortfolioApi.Services
@@ -18,9 +19,12 @@ namespace PortfolioApi.Services
         /// </summary>
         /// <param name="markdownContent"></param>
         /// <returns></returns>
-        public string ConvertMarkdownToHtml(string markdownContent)
+        public MDConversion ConvertMarkdownToHtml(string markdownContent)
         {
-            return Markdown.ToHtml(markdownContent);
+            var md = new MDConversion(markdownContent);
+            markdownContent = md.ParseSynopsis(markdownContent);
+            md.Formatted = Markdown.ToHtml(markdownContent);
+            return md;
         }
 
         /// <summary>
@@ -28,7 +32,7 @@ namespace PortfolioApi.Services
         /// </summary>
         /// <param name="contentDictionary"></param>
         /// <returns></returns>
-        public Dictionary<string, string> ConvertMarkdownToHtml(Dictionary<string, string> contentDictionary)
+        public Dictionary<string, MDConversion> ConvertMarkdownToHtml(Dictionary<string, string> contentDictionary)
         {
             return contentDictionary.Select(x => new
             {
@@ -42,11 +46,11 @@ namespace PortfolioApi.Services
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        public async Task<Dictionary<string, string>> ConvertMarkdownFilesToHtml(string path)
+        public async Task<Dictionary<string, MDConversion>> ConvertMarkdownFilesToHtml(string path)
         {
             var files = await fileService.ReadAllFilesIntoMemory(path);
             if (!files.Any())
-                return new Dictionary<string, string>();
+                return new Dictionary<string, MDConversion>();
 
             return ConvertMarkdownToHtml(files);
         }

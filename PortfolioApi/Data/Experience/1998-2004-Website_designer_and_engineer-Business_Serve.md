@@ -1,4 +1,6 @@
-﻿#CTO
+﻿//Rapid development of SME websites and internal systems for an early UK ISP
+
+#CTO
 
 ##Fuuse
 

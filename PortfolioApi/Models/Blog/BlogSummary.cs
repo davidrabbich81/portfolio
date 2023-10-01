@@ -1,4 +1,5 @@
 ﻿using PortfolioApi.Models.Experience;
+using PortfolioApi.Models.Markdown;
 using System.Text.RegularExpressions;
 
 namespace PortfolioApi.Models.Blog
@@ -52,6 +53,13 @@ namespace PortfolioApi.Models.Blog
                 summary.Title = nameMatch.Groups["title"].Value.MakeCodeReplacementsInString();
 
             }
+            return summary;
+        }
+
+
+        public static BlogSummary GetSynopsis(this BlogSummary summary, MDConversion content)
+        {
+            summary.Summary = content.Synopsis;
             return summary;
         }
 

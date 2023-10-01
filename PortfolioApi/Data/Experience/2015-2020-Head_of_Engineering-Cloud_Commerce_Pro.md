@@ -1,4 +1,6 @@
-﻿#CTO
+﻿//Managed & implemented the expansion of a multi-channel warehouse management solution.
+
+#CTO
 
 ##Fuuse
 

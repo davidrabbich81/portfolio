@@ -24,7 +24,10 @@ namespace PortfolioApi.Services
 
 
             results = markdown
-                .Select(x => new BlogSummary().ParseNameForInfo(x.Key))
+                .Select(x => new BlogSummary()
+                    .ParseNameForInfo(x.Key)
+                    .GetSynopsis(x.Value)
+                )
                 .ToList();
 
             return results;
@@ -40,8 +43,10 @@ namespace PortfolioApi.Services
 
             if (markdown.Any())
             {
-                result.ParseNameForInfo(markdown.First().Key);
-                result.Content = markdown.First().Value;
+                var item = markdown.First();
+                result.ParseNameForInfo(item.Key);
+                result.Content = item.Value.Formatted;
+                result.Summary = item.Value.Synopsis;
             }
 
             return result;

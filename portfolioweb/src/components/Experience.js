@@ -7,54 +7,54 @@ let experiences = [
     id: 1,
     type: "job",
     image: "assets/img/experience/1.jpg",
-    date: "2020 - Present",
+    timeFrame: "2020 - Present",
     company: "Fuuse",
-    designation: "CTO / Principle engineer",
+    jobTitle: "CTO / Principle engineer",
     synopsis: "Responsible for the creation of a world-class EV charging CSMS."
   },
   {
     id: 2,
     type: "job",
     image: "assets/img/experience/2.jpg",
-    date: "2015 - 2020",
+    timeFrame: "2015 - 2020",
     company: "Cloud Commerce Pro",
-    designation: "Head of engineering",
+    jobTitle: "Head of engineering",
     synopsis: "Managed & implemented the expansion of a multi-channel warehouse management solution."
   },
   {
     id: 3,
     type: "job",
     image: "assets/img/experience/3.jpg",
-    date: "2010 - 2015",
+    timeFrame: "2010 - 2015",
     company: "Fat Media",
-    designation: "Senior software engineer",
+    jobTitle: "Senior software engineer",
     synopsis: "Responsible for completing software clients projects for a leading digital agency."
   },
   {
     id: 4,
     type: "job",
     image: "assets/img/experience/4.jpg",
-    date: "2007 - 2010",
+    timeFrame: "2007 - 2010",
     company: "BF Internet",
-    designation: "Senior Software engineer",
+    jobTitle: "Senior Software engineer",
     synopsis: "Secondment to a leading online florist and the management of the development team."
   },
   {
     id: 5,
     type: "job",
     image: "assets/img/experience/4.jpg",
-    date: "2004 - 2007",
+    timeFrame: "2004 - 2007",
     company: "EKM",
-    designation: "Software engineer",
+    jobTitle: "Software engineer",
     synopsis: "Development of anscillary software projects for a (at the time), startup ecommerce provider"
   },
   {
     id: 6,
     type: "job",
     image: "assets/img/experience/4.jpg",
-    date: "1999 - 2004",
+    timeFrame: "1999 - 2004",
     company: "Business Serve",
-    designation: "Website designer & engineer",
+    jobTitle: "Website designer & engineer",
     synopsis: "Rapid development of SME websites and internal systems for an early UK ISP"
   }
 ];
@@ -64,7 +64,6 @@ const Experience = () => {
 
   useEffect(() => {
     getExperiences();
-    console.log("Get experiences", {response:  responseData });
   }, []);
 
   // fetches data
@@ -105,9 +104,9 @@ const Experience = () => {
                   <div className="short w-full float-left flex justify-between mb-[16px]">
                     <div className="job">
                       <span className="text-yellow-color font-medium inline-block mb-[4px]">
-                        {experience.date}
+                        {experience.timeFrame}
                       </span>
-                      <h3 className="text-[20px]">{experience.designation}</h3>
+                      <h3 className="text-[20px]">{experience.jobTitle}</h3>
                     </div>
                     <div className="place">
                       <span className="font-medium font-inter">

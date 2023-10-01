@@ -1,4 +1,6 @@
-﻿#CTO
+﻿//Responsible for completing software clients projects for a leading digital agency.
+
+#CTO
 
 ##Fuuse
 

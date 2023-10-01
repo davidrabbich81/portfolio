@@ -23,10 +23,14 @@ namespace PortfolioApi.Services
                 fileService.GetFullPathFromRelativePath("/Data/Experience/"));
 
             results = markdown
-                .Select(x => new ExperienceSummary().ParseNameForInfo(x.Key))
+                .Select(x => new ExperienceSummary()
+                    .ParseNameForInfo(x.Key)
+                    .GetSynopsis(x.Value)
+                    .GetFullContent(x.Value)
+                )
                 .ToList();
 
-            return results;
+            return results.OrderByDescending(x => x.TimeFrame);
         }
 
         public async Task<Experience> GetExperienceAsync(string id)
@@ -38,8 +42,10 @@ namespace PortfolioApi.Services
 
             if (markdown.Any())
             {
-                result.ParseNameForInfo(markdown.First().Key);
-                result.FullDescription = markdown.First().Value;
+                var item = markdown.First();
+                result.ParseNameForInfo(item.Key);
+                result.FullDescription = item.Value.Formatted;
+                result.Synopsis = item.Value.Synopsis;
             }
 
             return result;

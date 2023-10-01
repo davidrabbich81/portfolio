@@ -1,4 +1,6 @@
-﻿#CTO
+﻿//Secondment to a leading online florist and the management of the development team.
+
+#CTO
 
 ##Fuuse
 

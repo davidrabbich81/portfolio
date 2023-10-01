@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using PortfolioApi.Models.Markdown;
+using System.Text.RegularExpressions;
 
 namespace PortfolioApi.Models.Experience
 {
@@ -34,9 +35,14 @@ namespace PortfolioApi.Models.Experience
         /// </summary>
         public string TimeFrame { get; set; }
 
+        /// <summary>
+        /// The main content for the experience
+        /// </summary>
+        public string Content { get; set; }
+
         #endregion
 
-        
+
 
     }
 
@@ -60,6 +66,19 @@ namespace PortfolioApi.Models.Experience
                 summary.TimeFrame = nameMatch.Groups["time"].Value;
                 summary.Company = nameMatch.Groups["company"].Value.MakeCodeReplacementsInString();
             }
+            return summary;
+        }
+
+
+        public static ExperienceSummary GetSynopsis(this ExperienceSummary summary, MDConversion content)
+        {
+            summary.Synopsis = content.Synopsis;
+            return summary;
+        }
+
+        public static ExperienceSummary GetFullContent(this ExperienceSummary summary, MDConversion content)
+        {
+            summary.Content = content.Formatted;
             return summary;
         }
 

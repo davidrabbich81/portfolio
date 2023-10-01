@@ -25,17 +25,19 @@ namespace PortfolioApi.Tests.Tests.Services
 
             Assert.That(experiences.Any(), Is.True, "There were no experiences found");
 
-            foreach (var item in experiences)
+            foreach (var item in experiences.OrderByDescending(x => x.TimeFrame))
             {
                 Assert.That(item.Id, Is.Not.Null.And.Not.Empty, "The ID was empty");
                 Assert.That(item.JobTitle, Is.Not.Null.And.Not.Empty, "The Job title was empty");
                 Assert.That(item.Company, Is.Not.Null.And.Not.Empty, "The Company was empty");
                 Assert.That(item.TimeFrame, Is.Not.Null.And.Not.Empty, "The Timeframe was empty");
+                Assert.That(item.Synopsis, Is.Not.Null.And.Not.Empty, "The Synopsis was empty");
 
                 Console.WriteLine($"Id: {item.Id}");
                 Console.WriteLine($"Title: {item.JobTitle}");
                 Console.WriteLine($"Company: {item.Company}");
                 Console.WriteLine($"Time: {item.TimeFrame}");
+                Console.WriteLine($"Synopsis: {item.Synopsis}");
             }
 
         }

@@ -1,4 +1,6 @@
-﻿#CTO
+﻿//Development of anscillary software projects for a (at the time), startup ecommerce provider
+
+#CTO
 
 ##Fuuse
 
