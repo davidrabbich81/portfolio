@@ -15,11 +15,7 @@ const MobileMenu = () => {
             {" "}
             {/* You can use text or image as logo. data-type values are: "image" and "text"  */}
             <a className="image" href="#">
-              <img
-                className="max-w-[100px] max-h-[40px]"
-                src="assets/img/logo/logo.png"
-                alt="logo"
-              />
+              <h4>David Rabbich</h4>
             </a>
             <a className="text" href="#">
               <span>D.Rabbich</span>
