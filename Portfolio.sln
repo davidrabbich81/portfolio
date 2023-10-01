@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioApi", "PortfolioApi\PortfolioApi.csproj", "{ED174DF7-04C4-4F88-B4C1-F1C45829BDE7}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "portfolioweb", "PortfolioWeb\portfolioweb.esproj", "{260699A3-3373-41FE-B4D7-AA5C4CA606B9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioApi.Tests", "PortfolioApi.Tests\PortfolioApi.Tests.csproj", "{1F2A5E0E-81D9-4ABB-8A6D-669B8E18919F}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{ED174DF7-04C4-4F88-B4C1-F1C45829BDE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED174DF7-04C4-4F88-B4C1-F1C45829BDE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED174DF7-04C4-4F88-B4C1-F1C45829BDE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{260699A3-3373-41FE-B4D7-AA5C4CA606B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{260699A3-3373-41FE-B4D7-AA5C4CA606B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{260699A3-3373-41FE-B4D7-AA5C4CA606B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{260699A3-3373-41FE-B4D7-AA5C4CA606B9}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{1F2A5E0E-81D9-4ABB-8A6D-669B8E18919F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1F2A5E0E-81D9-4ABB-8A6D-669B8E18919F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F2A5E0E-81D9-4ABB-8A6D-669B8E18919F}.Release|Any CPU.ActiveCfg = Release|Any CPU
