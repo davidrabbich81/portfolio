@@ -1,4 +1,5 @@
 ﻿using PortfolioApi.Services.Interface;
+using System.Reflection;
 
 namespace PortfolioApi.Services
 {
@@ -20,6 +21,15 @@ namespace PortfolioApi.Services
 
             return results;
         }
+
+
+        /// <summary>
+        /// Gets the fully qualified path from a relative path
+        /// </summary>
+        /// <param name="relativePath"></param>
+        /// <returns></returns>
+        public string GetFullPathFromRelativePath(string relativePath)
+            => Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + relativePath;
 
     }
 }

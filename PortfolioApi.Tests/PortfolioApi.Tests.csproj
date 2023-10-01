@@ -21,4 +21,8 @@
     <Folder Include="Helpers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PortfolioApi\PortfolioApi.csproj" />
+  </ItemGroup>
+
 </Project>

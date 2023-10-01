@@ -1,3 +1,6 @@
+using PortfolioApi.Controllers;
+using PortfolioApi.Services.Interface;
+using PortfolioApi.Tests.Services;
 using PortfolioApi.Tests.Tests.Base;
 
 namespace PortfolioApi.Tests.Tests.Controllers
@@ -10,9 +13,18 @@ namespace PortfolioApi.Tests.Tests.Controllers
         }
 
         [Test]
-        public void When_TheBlogControllerGetBlogPostsIsCalled_Then_ACollectionOfPostsIsReturned()
+        public async Task When_TheBlogControllerGetBlogPostsIsCalled_Then_ACollectionOfPostsIsReturned()
         {
-            Assert.Pass();
+            // Arrange 
+            var controller = new BlogController(
+                blogService: IoCService.Controller.GetService<IBlogService>()
+                );
+
+            var result = await controller.GetBlogsAsync();
+
+            // Assert
+
+            Assert.That(result.Any(), Is.True, "There were no blog posts returned");
         }
     }
 }

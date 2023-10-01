@@ -11,5 +11,12 @@
         /// <param name="path"></param>
         /// <returns></returns>
         Task<Dictionary<string, string>> ReadAllFilesIntoMemory(string path);
+
+        /// <summary>
+        /// Gets the fully qualified path from a relative path
+        /// </summary>
+        /// <param name="relativePath"></param>
+        /// <returns></returns>
+        public string GetFullPathFromRelativePath(string relativePath);
     }
 }

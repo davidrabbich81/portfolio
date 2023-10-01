@@ -6,19 +6,29 @@ namespace PortfolioApi.Services
 {
     public class ExperienceService : IExperienceService
     {
-        public ExperienceService() { }
+        private readonly IMarkdownConverterService markdownConverterService;
+        private readonly IFileService fileService;
+
+        public ExperienceService(IMarkdownConverterService markdownConverterService, IFileService fileService)
+        {
+            this.markdownConverterService = markdownConverterService;
+            this.fileService = fileService;
+        }
 
         public async Task<IEnumerable<ExperienceSummary>> GetExperiencesAsync()
         {
             var results = new List<ExperienceSummary>();
 
-            results.Add(new ExperienceSummary()
-            {
-                JobTitle = "Test",
-                Id = "1",
-                Synopsis = "Test Synopsis",
-                Company = "Test Company"
-            });
+            var markdown = await markdownConverterService.ConvertMarkdownFilesToHtml(
+                fileService.GetFullPathFromRelativePath("/Data/Experience/"));
+
+            results = markdown
+                .Select(x => new ExperienceSummary() { 
+                    Id = x.Key, 
+                    Synopsis = x.Value, 
+                    JobTitle = "Test title", 
+                    Company = "Test company" 
+                }).ToList();
 
             return results;
         }
