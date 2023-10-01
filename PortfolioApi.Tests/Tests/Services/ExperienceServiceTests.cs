@@ -27,7 +27,15 @@ namespace PortfolioApi.Tests.Tests.Services
 
             foreach (var item in experiences)
             {
-                Console.WriteLine(item.Id);
+                Assert.That(item.Id, Is.Not.Null.And.Not.Empty, "The ID was empty");
+                Assert.That(item.JobTitle, Is.Not.Null.And.Not.Empty, "The Job title was empty");
+                Assert.That(item.Company, Is.Not.Null.And.Not.Empty, "The Company was empty");
+                Assert.That(item.TimeFrame, Is.Not.Null.And.Not.Empty, "The Timeframe was empty");
+
+                Console.WriteLine($"Id: {item.Id}");
+                Console.WriteLine($"Title: {item.JobTitle}");
+                Console.WriteLine($"Company: {item.Company}");
+                Console.WriteLine($"Time: {item.TimeFrame}");
             }
 
         }

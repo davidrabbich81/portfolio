@@ -23,12 +23,7 @@ namespace PortfolioApi.Services
                 fileService.GetFullPathFromRelativePath("/Data/Experience/"));
 
             results = markdown
-                .Select(x => new ExperienceSummary() { 
-                    Id = x.Key, 
-                    Synopsis = x.Value, 
-                    JobTitle = "Test title", 
-                    Company = "Test company" 
-                }).ToList();
+                .Select(x => new ExperienceSummary().ParseNameForInfo(x.Key)).ToList();
 
             return results;
         }

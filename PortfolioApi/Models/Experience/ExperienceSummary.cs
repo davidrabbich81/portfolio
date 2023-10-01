@@ -1,10 +1,14 @@
-﻿namespace PortfolioApi.Models.Experience
+﻿using System.Text.RegularExpressions;
+
+namespace PortfolioApi.Models.Experience
 {
     /// <summary>
     /// Represents experience held in a job position
     /// </summary>
     public class ExperienceSummary
     {
+        #region Properties
+        
         /// <summary>
         /// The unique identifier of the experience post
         /// </summary>
@@ -25,6 +29,44 @@
         /// </summary>
         public string Synopsis { get; set; }
 
+        /// <summary>
+        /// The length of the experience
+        /// </summary>
+        public string TimeFrame { get; set; }
+
+        #endregion
+
+        
+
+    }
+
+    public static class ExperienceExtensionMethods
+    {
+        internal static Regex _nameRegex = new Regex("^(?<time>\\d+-\\d+)-(?<title>.*?)-(?<company>.*?)$");
+
+        /// <summary>
+        /// Gets the critical info from the name of the post
+        /// </summary>
+        /// <param name="summary"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static ExperienceSummary ParseNameForInfo(this ExperienceSummary summary, string name)
+        {
+            var nameMatch = _nameRegex.Match(name);
+            if (nameMatch.Success)
+            {
+                summary.Id = nameMatch.Value;
+                summary.JobTitle = nameMatch.Groups["title"].Value.MakeCodeReplacementsInString();
+                summary.TimeFrame = nameMatch.Groups["time"].Value;
+                summary.Company = nameMatch.Groups["company"].Value.MakeCodeReplacementsInString();
+            }
+            return summary;
+        }
+
+        private static string MakeCodeReplacementsInString(this string input)
+        {
+            return input.Replace("_", " ");
+        }
 
     }
 }

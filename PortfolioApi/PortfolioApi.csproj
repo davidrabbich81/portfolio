@@ -18,6 +18,14 @@
   </Target>
 
   <ItemGroup>
+    <None Remove="Data\Experience\1998-2004-Website_designer_and_engineer-Business_Serve.md" />
+    <None Remove="Data\Experience\2004-2007-Software_engineer-EKM.md" />
+    <None Remove="Data\Experience\2007-2010-Senior_software_engineer-BF_Internet.md" />
+    <None Remove="Data\Experience\2010-2015-Senior_software_engineer-Fat_Media.md" />
+    <None Remove="Data\Experience\2015-2020-Head_of_Engineering-Cloud_Commerce_Pro.md" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Markdig" Version="0.33.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
