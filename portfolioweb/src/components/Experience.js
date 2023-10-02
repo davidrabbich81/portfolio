@@ -95,11 +95,6 @@ const Experience = () => {
                 className="mb-[40px] pl-[30px] float-left w-1/2"
                 key={"experience" + experience.id}
               >
-                <img
-                  className="popup_image"
-                  src="assets/img/experience/1.jpg"
-                  alt="image"
-                />
                 <div className="list_inner w-full float-left clear-both bg-white rounded-[4px] px-[70px] py-[45px] relative">
                   <div className="short w-full float-left flex justify-between mb-[16px]">
                     <div className="job">

@@ -154,15 +154,17 @@
   .elisc_tm_title span {
     @apply large:mb-[4px];
   }
-  .elisc_tm_experience .list ul li .list_inner {
+  
+  .elisc_tm_experience .list ul li .list_inner, .elisc_tm_education .list ul li .list_inner {
     @apply large:p-[40px];
   }
-  .elisc_tm_experience .job h3 {
+  .elisc_tm_experience .job h3, .elisc_tm_education .job h3 {
     @apply large:text-[19px];
   }
-  .elisc_tm_experience .job span {
+  .elisc_tm_experience .job span, .elisc_tm_education .job span {
     @apply large:mb-[3px];
-  }
+  } 
+
   .service_list .title span {
     @apply large:text-[18px] large:mb-[10px];
   }
@@ -354,19 +356,19 @@
   .elisc_tm_counter ul li {
     @apply small:w-full small:pl-0;
   }
-  .elisc_tm_experience .list ul {
+  .elisc_tm_experience .list ul, .elisc_tm_education .list ul {
     @apply small:m-0;
   }
-  .elisc_tm_experience .list ul li {
+  .elisc_tm_experience .list ul li, .elisc_tm_education .list ul li {
     @apply small:w-full small:pl-0;
   }
-  .elisc_tm_experience .list ul li .list_inner {
+  .elisc_tm_experience .list ul li .list_inner, .elisc_tm_education .list ul li .list_inner {
     @apply small:py-[35px] small:px-[25px];
   }
-  .elisc_tm_experience .short {
+  .elisc_tm_experience .short, .elisc_tm_education .short {
     @apply small:text-[15px];
   }
-  .elisc_tm_experience .list ul li {
+  .elisc_tm_experience .list ul li, .elisc_tm_education .list ul li {
     @apply small:mb-[30px];
   }
   .service_list ul {
