@@ -30,7 +30,7 @@ const About = () => {
               </div>
               <div className="elisc_tm_button transition_link">
                 <a href="#contact" onClick={() => navChange("contact")}>
-                    Lets work together?
+                    Let's work together
                 </a>
               </div>
             </div>
