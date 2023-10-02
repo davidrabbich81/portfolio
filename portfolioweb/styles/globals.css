@@ -11,6 +11,7 @@
   --dark-color: #130f49;
   --yellow-color: #ff972d;
   --blue-color: #a5a6ff;
+  --light-color: #ffffff;
 }
 
 @layer components {
@@ -78,6 +79,7 @@
   }
   .elisc_tm_sidebar {
     @apply large:!w-[300px];
+    color: #fff; 
   }
   .elisc_tm_mainpart {
     @apply large:!pl-[300px];

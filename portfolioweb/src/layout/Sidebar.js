@@ -9,7 +9,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="elisc_tm_sidebar w-[370px] h-[100vh] fixed left-0 top-0 border-solid border-[rgba(85,82,124,.1)] border-r">
+    <div className="elisc_tm_sidebar w-[370px] h-[100vh] fixed left-0 top-0 border-solid bg-[#302345] border-[rgba(85,82,124,.1)] border-r">
       <div className="sidebar_inner w-full float-left h-auto clear-both text-center">
         <div className="author w-full float-left pt-[60px]">
           <div className="image relative w-[118px] inline-block">
@@ -51,7 +51,7 @@ const Sidebar = () => {
               {socialLinks.map((link) => (
                 <li className="mr-[3px] inline-block" key={link.id}>
                   <a
-                    className="w-[40px] h-[40px] inline-block relative rounded-full text-dark-color"
+                    className="w-[40px] h-[40px] inline-block relative rounded-full text-light-color"
                     href={link.link}
                   >
                     <i

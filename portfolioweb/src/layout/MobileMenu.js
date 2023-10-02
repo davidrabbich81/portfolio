@@ -9,19 +9,19 @@ const MobileMenu = () => {
   }, []);
   return (
     <Fragment>
-      <div className="elisc_tm_topbar fixed top-0 left-0 right-0 h-[50px] bg-white z-[15] hidden">
+      <div className="elisc_tm_topbar fixed top-0 left-0 right-0 h-[50px] bg-[#302345] z-[15] hidden">
         <div className="topbar_inner w-full h-full clear-both flex items-center justify-between py-0 px-[20px]">
           <div className="logo" data-type="image">
             {" "}
             {/* You can use text or image as logo. data-type values are: "image" and "text"  */}
             <a className="image" href="#">
-              <h4>David Rabbich</h4>
+              <h4 className="text-[#fff]">David Rabbich</h4>
             </a>
             <a className="text" href="#">
               <span>D.Rabbich</span>
             </a>
           </div>
-          <div className="trigger">
+          <div className="trigger text-[#fff]">
             <div
               className={`hamburger hamburger--slider ${
                 toggle ? "is-active" : ""
@@ -37,12 +37,6 @@ const MobileMenu = () => {
       <div className={`elisc_tm_mobile_menu ${toggle ? "opened" : ""}`}>
         <div className="inner relative w-full h-full text-right px-[20px] pt-[70px] pb-[20px]">
           <div className="wrapper">
-            <div className="avatar w-[70px] h-[70px] relative float-right mb-[50px]">
-              <div
-                className="image absolute inset-0 bg-no-repeat bg-cover bg-center"
-                data-img-url="assets/img/about/1.jpg"
-              />
-            </div>
             <div className="menu_list w-full h-auto clear-both float-left mb-[50px]">
               <ul className="transition_link m-0">
                 {menus.map((menu, i) => (
@@ -63,7 +57,7 @@ const MobileMenu = () => {
             <div className="social w-full float-left mb-[5px]">
               <ul>
                 <li className="mr-[8px] inline-block">
-                  <a className="text-[#333]" href="https://www.linkedin.com/in/david-rabbich-87b73414/">
+                  <a className="text-[#fff]" href="https://www.linkedin.com/in/david-rabbich-87b73414/">
                     <img
                       className="svg"
                       src="assets/img/svg/social/linkedin.svg"
@@ -74,7 +68,7 @@ const MobileMenu = () => {
               </ul>
             </div>
             <div className="copyright w-full float-left">
-              <p className="text-dark-color">
+              <p className="text-[#fff]">
                 Copyright © {new Date().getFullYear()}
               </p>
             </div>

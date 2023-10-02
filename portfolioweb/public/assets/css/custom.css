@@ -245,13 +245,22 @@ body::-webkit-scrollbar-thumb {
 }
 .elisc_tm_topbar .hamburger {
   padding: 0px;
+  color: var(--light-color);
 }
 .elisc_tm_topbar .hamburger-inner,
 .elisc_tm_topbar .hamburger-inner:after,
 .elisc_tm_topbar .hamburger-inner:before {
   width: 30px;
   height: 2px;
+  background-color: var(--light-color);
 }
+
+.elisc_tm_topbar .hamburger.is-active .hamburger-inner,
+.elisc_tm_topbar .hamburger.is-active .hamburger-inner:after,
+.elisc_tm_topbar .hamburger.is-active .hamburger-inner:before {
+  background-color: var(--light-color);
+}
+
 .elisc_tm_topbar .trigger {
   position: relative;
   top: 5px;
@@ -266,7 +275,8 @@ body::-webkit-scrollbar-thumb {
   height: 100vh;
   width: 200px;
   z-index: 15;
-  background-color: #fff;
+  background-color: #302345;
+  color: var(--light-color);
 
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -277,6 +287,11 @@ body::-webkit-scrollbar-thumb {
 .elisc_tm_mobile_menu.opened {
   right: 0px;
 }
+
+.elisc_tm_mobile_menu a {
+  color: var(--light-color);
+}
+
 .elisc_tm_sidebar .author .main:before {
   position: absolute;
   content: "";
@@ -306,13 +321,13 @@ body::-webkit-scrollbar-thumb {
   font-family: "Inter", "sans-serif";
   font-weight: 700;
   font-size: 30px;
-  color: var(--dark-color);
+  color: var(--light-color);
   font-style: normal;
   margin-top: 5px;
 }
 
 .elisc_tm_sidebar .menu ul li a {
-  color: var(--main-color);
+  color: var(--light-color);
 
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
