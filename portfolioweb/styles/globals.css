@@ -473,3 +473,8 @@ html {
 .elisc_tm_intro .anim {
   font-family: unset;
 }
+
+.blog-content li {
+  list-style-type: disc;
+  margin-left: 1em;
+}
