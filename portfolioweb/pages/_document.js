@@ -1,17 +1,18 @@
 import { Head, Html, Main, NextScript } from "next/document";
+import personalInfo from "@/src/data/personalInfo";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="description" content="Name of your web site" />
-        <meta name="author" content="Marketify" />
+        <meta name="description" content={personalInfo.fullName + " - personal portfolio"} />
+        <meta name="author" content={personalInfo.fullName} />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
-        <title>David Rabbich</title>
+        <title>{personalInfo.fullName}</title>
         {/* STYLES */}
         <link
           href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
