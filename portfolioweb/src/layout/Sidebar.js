@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { context } from "../context";
+import personalInfo from "../data/personalInfo";
 
 const Sidebar = () => {
   const { navChange, nav, menus } = useContext(context);
@@ -26,7 +27,7 @@ const Sidebar = () => {
           <div className="name w-full float-left mt-[-19px]">
             <h3>
               <span>
-                &nbsp;<span className="back">David Rabbich</span>
+                &nbsp;<span className="back">{personalInfo.fullName}</span>
               </span>
             </h3>
           </div>
@@ -64,8 +65,7 @@ const Sidebar = () => {
           </div>
           <div className="text py-0 px-[50px]">
             <p>
-              Copyright © {new Date().getFullYear()} David Rabbich. All rights
-              reserved.
+              Copyright © {new Date().getFullYear()} {personalInfo.fullName}. All rights reserved.
             </p>
           </div>
         </div>

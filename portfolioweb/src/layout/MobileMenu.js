@@ -1,6 +1,7 @@
 import { Fragment, useContext, useEffect, useState } from "react";
 import { context } from "../context";
 import { eliscUtilits } from "../utilits";
+import personalInfo from "../data/personalInfo";
 const MobileMenu = () => {
   const { navChange, nav, menus } = useContext(context);
   const [toggle, setToggle] = useState(false);
@@ -15,10 +16,10 @@ const MobileMenu = () => {
             {" "}
             {/* You can use text or image as logo. data-type values are: "image" and "text"  */}
             <a className="image" href="#">
-              <h4 className="text-[#fff]">David Rabbich</h4>
+              <h4 className="text-[#fff]">{personalInfo.fullName}</h4>
             </a>
             <a className="text" href="#">
-              <span>D.Rabbich</span>
+              <span>{personalInfo.fullName}</span>
             </a>
           </div>
           <div className="trigger text-[#fff]">

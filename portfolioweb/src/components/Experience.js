@@ -36,7 +36,7 @@ let experiences = [
     image: "assets/img/experience/4.jpg",
     timeFrame: "2007 - 2010",
     company: "BF Internet",
-    jobTitle: "Senior Software engineer",
+    jobTitle: "Senior software engineer",
     synopsis: "Secondment to a leading online florist and the management of the development team."
   },
   {
