@@ -20,14 +20,14 @@ const education = [
     id: 3,
     date: "1997 - 1999",
     school: "Heysham High School",
-    qualification: "A-levels",
+    qualification: "2 A-levels",
     synopsis: "synopsis about a-levels."
   },
   {
     id: 4,
     date: "1992 - 1997",
     school: "Heysham High School",
-    qualification: "GCSEs",
+    qualification: "9 GCSEs",
     synopsis: "Synopsis about GCSEs."
   }
 ];
@@ -54,11 +54,6 @@ const Education = () => {
                       </span>
                       <h3 className="text-[20px]">{edu.qualification} - {edu.school}</h3>
                     </div>
-                  </div>
-                  <div className="text w-full float-left">
-                    <p className="opacity-[0.7]">
-                      {edu.synopsis}
-                    </p>
                   </div>
                 </div>
               </li>

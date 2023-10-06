@@ -6,12 +6,12 @@ const skillset = [
   {
     id: 1,
     name: "C# / .Net",
-    synopsis: "Development of Enterprise-level applications and APIs in .Net Core"
+    synopsis: "Development of enterprise-level applications and APIs in .Net Core"
   },
   {
     id: 10,
     name: "Node.Js",
-    synopsis: "Development of Lightweight realtime communication applications in Node.Js"
+    synopsis: "Development of lightweight real-time communication applications in Node.Js"
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const skillset = [
   {
     id: 11,
     name: "HTML/CSS/JS",
-    synopsis: "Full knowledge of the entire frontend web stack including popular frameworks such as React and Vue"
+    synopsis: "Full knowledge of the entire front-end web stack including popular frameworks such as React and Vue"
   },
   {
     id: 3,
@@ -56,12 +56,12 @@ const skillset = [
   {
     id: 9,
     name: "Mentoring",
-    synopsis: "Direct 1:1 development of both development and soft skills with engineering teams"
+    synopsis: "Direct 1:1 development of both technical and soft skills with engineering teams"
   },
   {
     id: 12,
     name: "Customer/Investor communication",
-    synopsis: "Fully adept at handling communications with both customers and investors translating business requirements to development goals"
+    synopsis: "Fully adept at handling communications with both customers and investors, translating business requirements to development goals"
   },
 ];
 const Skills = () => {

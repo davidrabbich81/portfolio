@@ -1,4 +1,4 @@
-﻿//Managed & implemented the expansion of a multi-channel warehouse management solution.
+﻿//Managed and implemented the expansion of a multi-channel warehouse management solution.
 
 - Manage work for a team of 16 developers split across Lancaster and Manila
 - Lead systems developer on a cloud based order-management SaaS platform.
