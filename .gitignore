@@ -3,3 +3,4 @@
 /*/node_modules/**
 /.github/**
 .DS_Store
+/PortfolioApi.Tests/obj/Debug/net7.0/PortfolioApi.Tests.csproj.AssemblyReference.cache
