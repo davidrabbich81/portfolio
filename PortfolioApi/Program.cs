@@ -1,3 +1,4 @@
+using PortfolioApi.BackgroundJobs;
 using PortfolioApi.Helpers.ExtensionMethods;
 using System.Reflection;
 
@@ -36,6 +37,9 @@ builder.Services.AddSwaggerGen((options) =>
 
 // add dependency injection services
 builder.AddDIServices();
+
+// add background services
+builder.Services.AddHostedService<KeepAliveService>();
 
 var app = builder.Build();
 
