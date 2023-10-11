@@ -12,3 +12,5 @@ I've already had plenty of exposure to Node.js code over the last few years buil
 
 
 All the above is hosted in Azure on a Free tier App service plan.  CI/CD pipelines publish the projects on commit to the main branch.  Each project is configured to only react to changes within its own folder so that the entire project does not have to be published for a small text change.
+
+This is all running on [rabbich.dev](https://rabbich.dev)
