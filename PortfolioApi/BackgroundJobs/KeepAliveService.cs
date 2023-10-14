@@ -1,6 +1,8 @@
-﻿namespace PortfolioApi.BackgroundJobs
+﻿using System.Net;
+
+namespace PortfolioApi.BackgroundJobs
 {
-    public class KeepAliveService : IHostedService, IDisposable
+    public class KeepAliveService : BackgroundService, IDisposable
     {
         private int executionCount = 0;
         private readonly ILogger<KeepAliveService> _logger;
@@ -11,37 +13,36 @@
             _logger = logger;
         }
 
-        public Task StartAsync(CancellationToken stoppingToken)
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _logger.LogInformation("Timed Hosted Service running.");
-
-            // run a basic job every 10 minutes
-            _timer = new Timer(DoWork, null, TimeSpan.Zero,
-                TimeSpan.FromMinutes(10));
-
-            return Task.CompletedTask;
+            var timer = new PeriodicTimer(TimeSpan.FromMinutes(10));
+            while (await timer.WaitForNextTickAsync(stoppingToken))
+            {
+                await CallKeepAliveEndpoint();
+            }
         }
 
-        private void DoWork(object? state)
+        /// <summary>
+        /// Calls the keep alive endpoint to keep the site running
+        /// </summary>
+        /// <returns></returns>
+        private async Task CallKeepAliveEndpoint()
         {
-            var count = Interlocked.Increment(ref executionCount);
+#if DEBUG
+            var host = "https://localhost:7214";
+#else
+            var host = "https://rabbich.dev";
+#endif
 
-            _logger.LogInformation(
-                "Timed Hosted Service is working. Count: {Count}", count);
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            httpClientHandler.AllowAutoRedirect = false;
+
+            using (HttpClient client = new HttpClient(httpClientHandler))
+            {
+                await client.GetAsync($"{host}/api/KeepAlive");
+                _logger.LogInformation("Keep alive Url was called");
+            }
         }
 
-        public Task StopAsync(CancellationToken stoppingToken)
-        {
-            _logger.LogInformation("Timed Hosted Service is stopping.");
-
-            _timer?.Change(Timeout.Infinite, 0);
-
-            return Task.CompletedTask;
-        }
-
-        public void Dispose()
-        {
-            _timer?.Dispose();
-        }
     }
 }
