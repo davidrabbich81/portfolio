@@ -2,6 +2,8 @@ import React, { useEffect, useContext } from "react";
 import { context } from "../context";
 import experienceClient from "../api/experienceClient";
 
+let loadedExperience = false;
+
 let experiences = [
   {
     id: 1,
@@ -70,6 +72,7 @@ const Experience = () => {
   let getExperiences = () => {
       experienceClient.getExperiences()
       .then((response)=>{
+          loadedExperience = true;
           setResponseData(response.data);
           console.log("ResponseData", responseData);
           if (responseData != null && responseData.length > 0){
@@ -87,12 +90,15 @@ const Experience = () => {
       <div className="tm_content w-full max-w-[1250px] h-auto clear-both my-0 mx-auto py-0 px-[20px]">
         <div className="elisc_tm_title w-full float-left">
           <h3 className="text-[40px] font-extrabold">Experience!</h3>
+          {loadedExperience === false && 
+            <p className="text-[20px]">Loading experience...</p>
+          }
         </div>
         <div className="list w-full float-left mt-[40px]">
           <ul className="ml-[-30px] flex flex-wrap">
             {(responseData || experiences).map((experience) => (
               <li
-                className="mb-[40px] pl-[30px] float-left w-1/2"
+                className={(loadedExperience ? "" : "opacity-50") + " mb-[40px] pl-[30px] float-left w-1/2" }
                 key={"experience" + experience.id}
               >
                 <div className="list_inner w-full float-left clear-both bg-white rounded-[4px] px-[70px] py-[45px] relative">
